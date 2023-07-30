@@ -59,15 +59,15 @@ const Home = () => {
               <div>
                 {!isActiveClaimPhaseLoading ? (
                   <div>
-                    <p>
-                      Price: {ethers.utils.formatUnits(activeClaimPhase?.price)}
+                    <p className="text-center lg:text-start">
+                      Price: <b className="text-[18px]">{ethers.utils.formatUnits(activeClaimPhase?.price)}</b>
                     </p>
                   </div>
                 ) : (
                   <p>Loading...</p>
                 )}
                 {!isTotalSuplyLoading && !isTotalClaimedLoading ? (
-                  <p className="">
+                  <p className="text-center lg:text-start">
                     Claimed: {totalClaimed?.toNumber()}/
                     {totalSuply?.toNumber()}
                   </p>
