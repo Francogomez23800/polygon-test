@@ -40,21 +40,21 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <main className="w-full h-[600px] flex flex-col items-center justify-center">
+      <main className="w-full h-[600px] flex flex-col items-center justify-center p-5 lg:p-0">
         {!isContractMetadataLoading && (
-          <div className="bg-slate-100 bg-opacity-20 flex gap-5 items-center rounded-2xl w-[600px] h-[300px] flex p-5">
-            <div className="w-[220px]">
+          <div className="bg-slate-100 bg-opacity-20 flex flex-col lg:flex-row gap-5 items-center rounded-2xl w-full lg:w-[600px] lg:h-[300px] flex p-5">
+            <div className="w-[150px] lg:w-[220px]">
               <img
                 src={contractMetadata?.image}
                 className="w-full rounded-2xl"
               />
             </div>
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-col gap-7 items-center lg:items-start">
               <div>
-                <h1 className="text-[30px] font-semibold">
+                <h1 className="text-[25px] lg:text-[30px] text-center font-semibold">
                   {contractMetadata.name}
                 </h1>
-                <p className="">{contractMetadata.description}</p>
+                <p className="text-center lg:text-start">{contractMetadata.description}</p>
               </div>
               <div>
                 {!isActiveClaimPhaseLoading ? (

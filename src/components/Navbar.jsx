@@ -5,18 +5,25 @@ const Navbar = () => {
   const address = useAddress()
 
   return (
-    <div className="w-full h-[70px] bg-white bg-opacity-5 flex items-center justify-between p-5">
+    <div className="w-full lg:h-[70px] bg-white bg-opacity-5 flex flex-col lg:flex-row items-center justify-center lg:justify-between p-5
+    sm:gap-3 lg:gap-0">
+    <div className="lg:hidden">
+    <ConnectWallet />
+    </div>
       <Link to={"/"}>NFT Collection</Link>
-      <div className="">
+      <div>
         {address && (
           <Link 
           to={`/profile/${address}`}
-          href={`/profile/${address}`} >
+          href={`/profile/${address}`} 
+          >
             My NFTs
           </Link>
         )}
       </div>
-      <ConnectWallet />
+      <div className="sm:hidden lg:block">
+      <ConnectWallet/>  
+      </div>
     </div>
   );
 };

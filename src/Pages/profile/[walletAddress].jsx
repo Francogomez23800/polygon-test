@@ -26,20 +26,13 @@ const Profile = () => {
       <div className="flex flex-col">
         {address ? (
           <>
-            <div className="p-3">
-              <p className="text-[22px]">
-                <b className="font-semibold">Wallet Address:</b>{" "}
-                {truncateAddress(address || "")}
-              </p>
-            </div>
-
             <h3 className="p-3 text-[20px]">My NFTs:</h3>
-            <div className="w-full grid grid-cols-3 p-10">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 p-10">
               {!isOwnedNFTsLoading ? (
                 ownedNFTs?.length > 0 ? (
                   ownedNFTs?.map((nft) => (
                     <div
-                      className="w-[350px] bg-slate-100 bg-opacity-20 rounded-2xl flex flex-col gap-5 items-center justify-center p-10"
+                      className="w-full lg:w-[350px] bg-slate-100 bg-opacity-20 rounded-2xl flex flex-col gap-5 items-center justify-center p-10"
                       key={nft.metadata.id}
                     >
                       
